@@ -1,0 +1,20 @@
+<% provide(:title, 'Eventos') %>
+<h1>Concursos</h1>
+<%#= link_to "Crear",new_event_path %>
+
+<div class="card-group">
+  <div class="container">
+    <div class="row">
+  <% @concourses.each do |concourse| %>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag(concourse.image, class: "img-responsive") %>
+    <div class="card-body">
+      <h5 class="card-title"><%= concourse.name %></h5>
+      <p class="card-text"><%= concourse.description %></p>
+      <p class="card-text"><%= concourse.prize %></p>
+    </div>
+  </div>
+<% end %>
+    </div>
+  </div>
+</div>

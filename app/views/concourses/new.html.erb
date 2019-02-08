@@ -1,9 +1,9 @@
-<% provide(:title, 'Registrate') %>
+<% provide(:title, 'Crear Concurso') %>
 <h1>Registrate</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@administrator, url: signup_path) do |f| %>
-      <%= render 'shared/error_messages' %>
+    <%= form_for(@concourse, url: create_concourses_path) do |f| %>
+      <%#= render 'shared/error_messages' %>
 
       <%= f.label :name," Nombre" %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -11,16 +11,28 @@
       <%= f.label :url," Url" %>
       <%= f.text_field :url, class: 'form-control' %>
 
-      <%= f.label :email, "Correo electrónico" %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :initDate, "Fecha Inicio" %>
+      <%= f.date_field :initDate, class: 'form-control' %>
 
-      <%= f.label :password, "Contraseña" %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :endDate, "Fecha Fin" %>
+      <%= f.date_field :endDate, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirma contraseña" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.label :description," Descripción" %>
+      <%= f.text_field :description, class: 'form-control' %>
 
-      <%= f.submit "Crear cuenta", class: "btn btn-primary" %>
+      <%= f.label :comment," Comentarios" %>
+      <%= f.text_field :comment, class: 'form-control' %>
+
+      <%= f.label :winner," Ganador" %>
+      <%= f.text_field :winner, class: 'form-control' %>
+
+      <%= f.label :prize," Precio" %>
+      <%= f.text_field :prize, class: 'form-control' %>
+
+      <%= f.label :image," Imagen Concurso" %>
+      <%= f.file_field :image %>
+
+      <%= f.submit "Crear Concurso", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

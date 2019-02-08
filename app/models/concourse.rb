@@ -1,5 +1,6 @@
 class Concourse < ApplicationRecord
 
-  has_many :voices
+  has_many :users
+  has_one_attached :image
 
 end

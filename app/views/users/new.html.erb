@@ -1,2 +1,27 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Registrate') %>
+<h1>Registrate</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@administrator, url: signup_path) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name," Nombres" %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :surname, "Apellidos" %>
+      <%= f.text_field :email, class: 'form-control' %>
+
+      <%= f.label :observations, "Observaciones" %>
+      <%= f.text_field :observations, class: 'form-control' %>
+
+      <%= f.label :email, "Correo electrónico" %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :sound,"Tu voz" %>
+      <%= f.file_field :sound %>
+
+
+      <%= f.submit "Crear cuenta", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

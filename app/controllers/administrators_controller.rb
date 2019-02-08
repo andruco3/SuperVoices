@@ -3,15 +3,15 @@ class AdministratorsController < ApplicationController
     @administrator = Administrator.find(params[:id])
   end
 
-
   def index
     @administrators = Administrator.all
   end
 
   def create
-    @administrator = Administrator.new(Administrator_params)
+    @administrator = Administrator.new(administrator_params)
     if @administrator.save
       log_in @administrator
+      redirect_to listconcourse_path
       flash[:success] = "Bienvenido a EventGo"
     else
       render 'new'
@@ -22,8 +22,8 @@ class AdministratorsController < ApplicationController
     @administrator = Administrator.new
   end
 
-  def Administrator_params
-    params.require(:Administrator).permit(:name, :email, :password,
+  def administrator_params
+    params.require(:administrator).permit(:name, :email, :password,
                                  :password_confirmation)
   end
 end

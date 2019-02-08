@@ -3,6 +3,23 @@
 
 /* mixins, variables, etc. */
 
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 30rem;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
@@ -172,7 +189,6 @@ footer {
       }
     }
   }
-
 
 
 
