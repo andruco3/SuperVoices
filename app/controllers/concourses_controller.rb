@@ -23,7 +23,14 @@ class ConcoursesController < ApplicationController
   end
 
   def concourse_params
-    params.require(:concourse).permit(:name, :email, :password,
-                                          :password_confirmation)
+    params.require(:concourse).permit(:name, :url, :initDate, :endDate, :description, :comment, :winner,
+                                          :prize)
+  end
+
+
+  def destroy
+    Concourse.find(params[:id]).destroy
+    # flash[:success] = "Eventos eliminados"
+    redirect_to root_url
   end
 end
