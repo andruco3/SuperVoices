@@ -10,9 +10,8 @@ class Concourse < ApplicationRecord
     slug
   end
 
-
   def assign_slug
-    self.slug = params[:url]
+    self.slug = "#{ self.url }"
   end
 
   def update_slug

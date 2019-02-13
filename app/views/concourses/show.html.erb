@@ -1,11 +1,19 @@
-<% provide(:title, @concourse.name) %>
+<% provide(:title, "asddasd") %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%#= gravatar_for @user %>
         <%= @concourse.name %>
+        <%= image_tag(@concourse.image, class: "img-responsive") %>
       </h1>
+
+      <p>Fecha Inicio: <%= @concourse.initDate %></p>
+      <p>Fecha Final: <%= @concourse.endDate %></p>
+      <p>Fecha Descripción: <%= @concourse.description %></p>
+      <p>Comentarios: <%= @concourse.comment %></p>
+      <p>Precio al Ganador: <%= @concourse.prize %></p>
+
     </section>
   </aside>
 </div>

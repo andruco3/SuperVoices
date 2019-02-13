@@ -1,7 +1,10 @@
 <% provide(:title, 'Eventos') %>
-<h1>Concursos</h1>
 <%#= link_to "Crear",new_event_path %>
-<%= button_to "Crear concurso", listconcourse_url, method: :get, class: "btn btn-primary" %>
+<% if logged_in? %>
+<%= button_to "Crear concurso", new_concourse_url, method: :get, class: "btn btn-primary" %>
+<% end %>
+<%= image_tag("musica1.jpg", class: "img-responsive") %>
+<h1>Concursos vigentes</h1>
 <div class="card-group">
   <div class="container">
     <div class="row">
@@ -9,12 +12,12 @@
   <div class="card" >
     <%= image_tag(concourse.image, class: "img-responsive") %>
     <div class="card-body">
-      <h5 class="card-title"><%= link_to "Editar",edit_event_path(event)%></h5>
+      <h5 class="card-title"> <%= link_to concourse.name, concourse_url(concourse) %></h5>
       <p class="card-text"><%= concourse.description %></p>
       <p class="card-text"><%= concourse.prize %></p>
       <div>
-      <%= button_to "Editar", edit_concourse_path(concourse), class: "btn btn-primary" %>
-      <%= button_to "Eliminar", concourse, method: :delete, class: "btn btn-primary" %>
+      <%= link_to "Editar", edit_concourse_url(concourse), class: "btn btn-primary" %>
+      <%= link_to "Eliminar", concourse, method: :delete, class: "btn btn-primary" %>
     </div>
     </div>
   </div>
